@@ -1,0 +1,179 @@
+/* style.css */
+
+:root {
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .navbar a,
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link,
+body.dark-mode .btn-outline-light {
+  color: #f1f1f1 !important;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  padding: 6rem 1rem;
+}
+
+.card-body {
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  font-size: 0.9rem;
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode footer {
+  background-color: #000;
+  color: #ccc;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode .btn {
+  background-color: #0d6efd;
+  color: white;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: #444;
+}
+
+textarea:focus,
+input:focus {
+  outline: none !important;
+  border: 1px solid #0d6efd !important;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+/* Scroll Progress Bar */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background: #0d6efd;
+  z-index: 9999;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #0b5ed7;
+}
+
+/* Social Icon Fade-In */
+footer a img,
+.social-icons a img {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+footer a.animate-icon img,
+.social-icons a.animate-icon img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-icon img {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enable dark mode for About section */
+body.dark-mode .about-section {
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+
+body.dark-mode .about-card {
+  background-color: #2a2a2a !important;
+  color: #f1f1f1;
+}
+
+body.dark-mode .about-card p,
+body.dark-mode .about-card h4,
+body.dark-mode .about-card h6,
+body.dark-mode .about-card small {
+  color: #ddd !important;
+}
+
+body.dark-mode .about-card img {
+  filter: brightness(0.9);
+}
+
+
