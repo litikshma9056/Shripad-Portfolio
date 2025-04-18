@@ -1,5 +1,3 @@
-/* style.css */
-
 :root {
   --transition-speed: 0.3s;
 }
@@ -10,6 +8,7 @@ body {
   scroll-behavior: smooth;
   background-color: #ffffff;
   color: #000000;
+  overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -17,6 +16,7 @@ body.dark-mode {
   color: #f1f1f1;
 }
 
+/* Navbar */
 body.dark-mode .navbar {
   background-color: #1f1f1f !important;
 }
@@ -28,31 +28,21 @@ body.dark-mode .btn-outline-light {
   color: #f1f1f1 !important;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
+/* Section spacing */
+.section {
+  padding: 4rem 1rem;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 2rem;
   }
 }
 
-.section {
-  padding: 6rem 1rem;
-}
-
-.card-body {
-  font-weight: 500;
-  font-size: 1rem;
-  text-align: center;
-}
-
+/* Card styles */
 .card {
   transition: transform 0.3s ease-in-out;
+  height: 100%;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -66,34 +56,19 @@ body.dark-mode .btn-outline-light {
   transform: translateY(-5px);
 }
 
-footer {
-  font-size: 0.9rem;
-  background-color: #333;
-  color: white;
+.card-body {
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
 }
 
-body.dark-mode footer {
-  background-color: #000;
-  color: #ccc;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-body.dark-mode .card {
-  background-color: #1e1e1e;
-  color: white;
-}
-
-body.dark-mode .btn {
-  background-color: #0d6efd;
-  color: white;
-}
-
-body.dark-mode input,
-body.dark-mode textarea {
-  background-color: #2a2a2a;
-  color: white;
-  border-color: #444;
-}
-
+/* Input focus */
 textarea:focus,
 input:focus {
   outline: none !important;
@@ -134,35 +109,55 @@ input:focus {
   background-color: #0b5ed7;
 }
 
-/* Social Icon Fade-In */
-footer a img,
-.social-icons a img {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode footer {
+  background-color: #000;
+  color: #ccc;
+}
+
+/* Animations */
+.fade-in {
   opacity: 0;
   transform: translateY(20px);
+  animation: fadeIn 1s forwards;
 }
 
-footer a.animate-icon img,
-.social-icons a.animate-icon img {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-icon img {
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 1;
-  transform: translateY(0);
+/* Dark mode card fix */
+body.dark-mode .card,
+body.dark-mode .about-card {
+  background-color: #1e1e1e;
+  color: white;
 }
 
-/* Enable dark mode for About section */
+body.dark-mode .btn {
+  background-color: #0d6efd;
+  color: white;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: #444;
+}
+
+/* About section dark theme */
 body.dark-mode .about-section {
   background-color: #1a1a1a;
   color: #eaeaea;
-}
-
-body.dark-mode .about-card {
-  background-color: #2a2a2a !important;
-  color: #f1f1f1;
 }
 
 body.dark-mode .about-card p,
@@ -176,4 +171,16 @@ body.dark-mode .about-card img {
   filter: brightness(0.9);
 }
 
+/* Social Icons Fade-in */
+footer a img,
+.social-icons a img {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
+footer a.animate-icon img,
+.social-icons a.animate-icon img {
+  opacity: 1;
+  transform: translateY(0);
+}
